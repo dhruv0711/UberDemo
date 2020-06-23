@@ -65,7 +65,8 @@ func CreateBooking(c *gin.Context) {
 }
 
 func GetNearByCabs(c *gin.Context) {
-	customerGps := c.Param("customerGps")
+	var book Booking
+	c.BindJSON(&book)
 
 	CabsList, err := FindAllCabsDB()
 	if err != nil {
@@ -75,7 +76,7 @@ func GetNearByCabs(c *gin.Context) {
 	var minDistance float64 = math.MaxFloat64
 	var cab Cabs
 	for _, v := range CabsList {
-		dis, err := calculateDistance(v.CabCurrentGps, customerGps)
+		dis, err := calculateDistance(v.CabCurrentGps, book.CustomerGps)
 		if err != nil {
 			fmt.Println(err)
 		}
