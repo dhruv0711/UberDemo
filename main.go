@@ -10,7 +10,7 @@ func main() {
 	r := gin.Default()
 	r.GET("/getBookingHistory/:phoneNumber", service.GetBookingHistory)
 	r.POST("/createBooking", service.CreateBooking)
-	r.POST("/getNearByCabs/:customerGps", service.GetNearByCabs)
+	r.POST("/getNearByCabs", service.GetNearByCabs)
 	r.POST("/addACab", service.AddACab)
 	r.Run(":8888")
 }
