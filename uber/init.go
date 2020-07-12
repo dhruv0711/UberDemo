@@ -12,7 +12,7 @@ var db *gorm.DB
 func init() {
 	var err error
 
-	db, err = gorm.Open("postgres", "host=localhost port=5432 user=postgres dbname=uber password=dhruv@11")
+	db, err = gorm.Open("postgres", "host=172.16.1.1 port=5432 user=postgres dbname=uber password=password123 sslmode=disable")
 	if err != nil {
 		fmt.Println(err)
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	service "github.com/dhruv0711/UberDemo/internal"
+	service "github.com/dhruv0711/UberDemo/uber"
 	"github.com/gin-gonic/gin"
 )
 
